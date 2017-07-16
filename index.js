@@ -12,14 +12,9 @@ var map = new mapboxgl.Map({
   zoom: 11
 });
 
-
-var locations = {
-  
-  client.listFeatures('cj571ptly0uy833p6vihu984u', {}, function(err, collection) {
-  console.log(collection);
-});
-
-};
+var stores = client.listFeatures('cj571ptly0uy833p6vihu984u', {}, function(err, collection) {
+  				console.log(collection);
+			});
 
 map.on('load', function(e) {
   // Add the data to your map as a layer
@@ -29,7 +24,7 @@ map.on('load', function(e) {
     // Add a GeoJSON source containing place coordinates and information.
     source: {
       type: 'geojson',
-      data: locations
+      data: stores
     },
     layout: {
       'icon-image': 'restaurant-15',
